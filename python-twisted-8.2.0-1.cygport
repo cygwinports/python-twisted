@@ -1,0 +1,7 @@
+ORIG_PN="Twisted"
+
+inherit distutils
+
+DESCRIPTION="Python networking engine"
+HOMEPAGE="http://twistedmatrix.com/trac/"
+SRC_URI="http://tmrc.mit.edu/mirror/twisted/Twisted/${PV[1]}.${PV[2]}/Twisted-${PV}.tar.bz2"

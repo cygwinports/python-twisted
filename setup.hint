@@ -1,0 +1,6 @@
+category: Net Python
+requires: libgcc1 python python-openssl python-zope.interface
+sdesc: "Python networking engine"
+ldesc: "Twisted is a networking engine written in Python, supporting 
+numerous protocols. It contains a web server, numerous chat clients, 
+chat servers, mail servers, and more."

@@ -1,0 +1,48 @@
+python-twisted
+------------------------------------------
+Twisted is a networking engine written in Python, supporting numerous 
+protocols. It contains a web server, numerous chat clients, chat 
+servers, mail servers, and more.
+
+Runtime requirements:
+  cygwin-1.7.0-62
+  libgcc1-4.3.4-1
+  python-2.5.4-10
+  python-openssl-0.9-1
+  python-zope.interface-3.5.1-1
+
+Build requirements:
+  binutils-2.19.51-1
+  cygport-0.9.10-1
+  gcc4-core-4.3.4-1
+  python-2.5.4-10
+
+Canonical website:
+  http://twistedmatrix.com/trac/
+
+Canonical download:
+  http://tmrc.mit.edu/mirror/twisted/Twisted/
+
+-------------------------------------------
+
+Build instructions:
+  unpack python-twisted-8.2.0-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./python-twisted-8.2.0-X.cygport all
+
+This will create:
+  /usr/src/python-twisted-8.2.0-X-src.tar.bz2
+  /usr/src/python-twisted-8.2.0-X.tar.bz2
+
+-------------------------------------------
+
+Port Notes:
+
+----- version 8.2.0-1 -----
+Initial release for Cygwin 1.7.
+
+
+Cygwin port maintained by:
+http://sourceware.org/cygwinports/
