@@ -1,0 +1,13 @@
+ORIG_PN="Twisted"
+inherit distutils
+
+NAME="python-twisted"
+VERSION=12.3.0
+RELEASE=1
+CATEGORY="Python"
+SUMMARY="Python networking engine"
+DESCRIPTION="Twisted is a networking engine written in Python, supporting
+numerous protocols. It contains a web server, numerous chat clients, chat
+servers, mail servers, and more."
+HOMEPAGE="http://twistedmatrix.com/trac/"
+SRC_URI="http://pypi.python.org/packages/source/${ORIG_PN:0:1}/${ORIG_PN}/${ORIG_PN}-${PV}.tar.bz2"
