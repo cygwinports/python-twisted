@@ -1,8 +1,7 @@
-ORIG_PN="Twisted"
-inherit distutils
+inherit python-wheel
 
 NAME="python-twisted"
-VERSION=12.3.0
+VERSION=16.4.1
 RELEASE=1
 CATEGORY="Python"
 SUMMARY="Python networking engine"
@@ -10,4 +9,17 @@ DESCRIPTION="Twisted is a networking engine written in Python, supporting
 numerous protocols. It contains a web server, numerous chat clients, chat
 servers, mail servers, and more."
 HOMEPAGE="http://twistedmatrix.com/trac/"
-SRC_URI="http://pypi.python.org/packages/source/${ORIG_PN:0:1}/${ORIG_PN}/${ORIG_PN}-${PV}.tar.bz2"
+SRC_URI="https://files.pythonhosted.org/packages/source/T/Twisted/Twisted-${VERSION}.tar.bz2"
+SRC_DIR="Twisted-${VERSION}"
+
+python2_twisted_REQUIRES="python2-service_identity"
+python2_twisted_CONTENTS="usr/bin/ ${python2_twisted_CONTENTS}"
+python3_twisted_REQUIRES="python3-service_identity"
+
+src_install() {
+	cd ${B}
+	python_wheel_install
+
+	# most scripts are py2 only, so make them all so
+	sed -i -e 's/python3/python2/' ${D}/usr/bin/*
+}
