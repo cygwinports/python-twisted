@@ -1,7 +1,7 @@
 inherit python-wheel
 
 NAME="python-twisted"
-VERSION=16.4.1
+VERSION=16.6.0
 RELEASE=1
 CATEGORY="Python"
 SUMMARY="Python networking engine"
