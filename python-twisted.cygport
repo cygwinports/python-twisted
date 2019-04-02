@@ -1,7 +1,7 @@
 inherit python-wheel
 
 NAME="python-twisted"
-VERSION=16.6.0
+VERSION=18.9.0
 RELEASE=1
 CATEGORY="Python"
 SUMMARY="Python networking engine"
@@ -12,14 +12,9 @@ HOMEPAGE="http://twistedmatrix.com/trac/"
 SRC_URI="https://files.pythonhosted.org/packages/source/T/Twisted/Twisted-${VERSION}.tar.bz2"
 SRC_DIR="Twisted-${VERSION}"
 
-python2_twisted_REQUIRES="python2-service_identity"
-python2_twisted_CONTENTS="usr/bin/ ${python2_twisted_CONTENTS}"
-python3_twisted_REQUIRES="python3-service_identity"
+python27_twisted_REQUIRES="python27-service_identity"
+python36_twisted_REQUIRES="python36-service_identity"
+python37_twisted_REQUIRES="python37-service_identity"
+python37_twisted_CONTENTS+=" usr/bin/*"
 
-src_install() {
-	cd ${B}
-	python_wheel_install
-
-	# most scripts are py2 only, so make them all so
-	sed -i -e 's/python3/python2/' ${D}/usr/bin/*
-}
+REQUIRES_EXCLUDE_FROM="*/internet/[gw]*reactor.py:*/test/*"
